@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Theme:</b>
+  <%= @decoration.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @decoration.year %>
+</p>
+<% @zone=Zone.find(@decoration.zone_id) %>
+<p>
+  <b>Zone:</b>
+  <%= @zone.name %>
+</p>
+
+<p>
+  <b>Expense:</b>
+<% if @decoration.expense.exists? %>
+ <%=  link_to "Download", @decoration.expense.url(:original, false) %>
+<% else %>
+No file uploaded for expense
+<% end %>
+</p>
+
+
+  <%= paginate @tasks %> 
+<table>
+  <tr>
+    <th>Task Name</th>
+    <th>Assigned to users</th>
+ 
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |t| %>
+
+  <tr>
+    <td>   <%= t.name %></td>
+    <td>   <% t.users.each do |user| %> <%=user.username%> <% end %></td>
+     <td><%= link_to 'Edit', edit_task_path(t) %></td>
+    <td><%= link_to 'Destroy', t, confirm: 'Are you sure?', method: :delete %></td>
+     
+
+<% end %>
+  </tr>
+</table>
+ <br/>
+ <h3>Add tasks and users</h3>
+
+<%= form_for([@decoration, @decoration.tasks.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <br />
+Select Users:
+  <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true}) %>
+  <br/><br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

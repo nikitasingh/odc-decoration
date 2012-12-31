@@ -1,0 +1,34 @@
+
+
+
+  <h1>Listing decorations</h1>
+  <%= paginate @decorations %> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Zone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+      <th></th>
+  </tr>
+
+<% @decorations.each do |decoration| %>
+<% @zone=Zone.find(decoration.zone_id) %>
+
+  <tr>
+    <td><%= decoration.name %></td>
+    <td><%= decoration.year %></td>
+    <td><%= @zone.name %></td>
+    <td><%= link_to 'Assign tasks', decoration %></td>
+    <td><%= link_to 'Show', decoration %></td>
+    <td><%= link_to 'Edit', edit_decoration_path(decoration) %></td>
+    <td><%= link_to 'Destroy', decoration, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Decoration', new_decoration_path %>
