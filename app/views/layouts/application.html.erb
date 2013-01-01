@@ -9,7 +9,8 @@
 </head>
 <div class="header">
   <h2>
-    <%= image_tag("flower.png", :size => "60x60",:alt => "odc decoration") %> ODC Decoration Management 
+
+   <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> ODC Decoration Management
   </h2>
   <div class="signout" align="right" style="color:#ffffff">
     <% if user_signed_in? %>
