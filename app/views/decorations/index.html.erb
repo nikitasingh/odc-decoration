@@ -7,8 +7,8 @@
   <tr>
     <th>Name</th>
     <th>Year</th>
+    <th>Expense</th>
     <th>Zone</th>
-    <th></th>
     <th></th>
     <th></th>
       <th></th>
@@ -20,6 +20,14 @@
   <tr>
     <td><%= decoration.name %></td>
     <td><%= decoration.year %></td>
+    <td><p>
+  <b></b>
+<% if decoration.expense.exists? %>
+ <%=  link_to "Download", decoration.expense.url(:original, false) %>
+<% else %>
+No file uploaded for expense
+<% end %>
+</p></td>
     <td><%= @zone.name %></td>
     <td><%= link_to 'Assign tasks', decoration %></td>
     <td><%= link_to 'Show', decoration %></td>
