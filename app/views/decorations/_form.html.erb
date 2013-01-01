@@ -26,10 +26,12 @@
     <%= f.label :zone_id %><br />
     <%= f.collection_select :zone_id ,@zone,:id,:name %>
   </div>
-
   <div class="field">
+
+Expense:<br/>
     <%= f.file_field :expense %>
   </div>
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>
