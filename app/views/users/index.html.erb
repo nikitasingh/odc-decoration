@@ -1,6 +1,6 @@
-
-
-<h1>Listing users</h1>
+<br/><br/>
+<center>
+<h1>Listing users</h1></center>
 <%= paginate @users %>
 <table>
   <tr>
@@ -15,6 +15,10 @@
     <tr>
       <td><%= user.email %></td>
       <td><%= user.username %></td>
+        <td>
+
+   <% user.roles.each do |role| %> <%=role.name%>  <% end %>
+        </td>
       <td> <% if can? :update, @user %><%= link_to 'Show', user %><% end %></td>
       <td><% if can? :update, @user %>
 <%= link_to 'Edit', edit_user_path(user) %>
