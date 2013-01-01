@@ -8,10 +8,11 @@
   </tr>
 
 <% @decorations.each do |dec| %>
+<% @zone=Zone.find(dec.zone_id) %>
   <tr>
     <td><%= dec.name %></td>
     <td><%= dec.year %></td>
-    <td><%= dec.zone_id %></td>
+    <td><%= @zone.name %></td>
     
   </tr>
 <% end %>
