@@ -1,4 +1,4 @@
-==Link for heroku link:sheltered-waters-2222.herokuapp.com/
+==Link for heroku link:http://sheltered-waters-2222.herokuapp.com
 
 
 
