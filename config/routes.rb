@@ -3,7 +3,7 @@ Odcdecoration::Application.routes.draw do
   resources :tasks 
   resources :taskusers
 
-devise_for :users, :path_prefix => 'my'
+devise_for :users
 resources :users
   resources :zones
 
