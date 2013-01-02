@@ -48,7 +48,6 @@ No file uploaded for expense
   </tr>
 </table>
 
- <br/>
  <h3>Add tasks and users</h3>
 
 <%= form_for([@decoration, @decoration.tasks.build]) do |f| %>
@@ -56,7 +55,6 @@ No file uploaded for expense
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <br />
 Select Users:
   <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true}) %>
   <div class="actions">
