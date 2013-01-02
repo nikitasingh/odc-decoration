@@ -48,7 +48,7 @@
             <li><% if can? :update, @user %><%= link_to 'New user', new_user_path %><% end %></li>
             <li><%= link_to 'View users', users_path %></li>
             <li><% if can? :update, @user %><%= link_to 'Delete or Edit users', users_path %><% end %></li>
-            <li><% if can? :update, @user %><%= link_to 'New roles', roles_path %><% end %></li>
+            <li><% if can? :update, @user %><%= link_to 'New roles', new_role_path %><% end %></li>
             <li><%= link_to 'View roles', roles_path %></li>
             <li><% if can? :update, @user %><%= link_to 'Delete or Edit roles', roles_path %><% end %></li>
         </ul>

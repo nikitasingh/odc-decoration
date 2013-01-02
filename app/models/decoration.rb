@@ -1,9 +1,10 @@
 class Decoration < ActiveRecord::Base
 	attr_accessible :name, :year, :zone_id 
-	validates :name,  :presence => true
-	validates :year, :length => { :is => 4 },:numericality => { :only_integer => true }, :presence => true
+	validates :name,  :presence => true,:uniqueness => true
+validates_attachment_content_type :expense, :content_type => ['application/excel','application/vnd.ms-excel','application/
+vnd.msexcel']
 	attr_accessible :expense
-    has_attached_file :expense, :default_url => "assets/images/rails.png"
+    has_attached_file :expense
     has_many:tasks
 
 end
