@@ -1,17 +1,13 @@
 Odcdecoration::Application.routes.draw do
   resources :roles
   resources :tasks 
-
   devise_for :users
   resources :users
   resources :zones
-  resources :tasks_users 
-
-
   resources :decorations do
     collection do
       get :home
-      get 'fetch_data'
+      get :fetch_data
     end
     resources :tasks 
    end
