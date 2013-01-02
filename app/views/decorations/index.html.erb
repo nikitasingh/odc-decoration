@@ -1,10 +1,18 @@
 <br/><br/><center>
 
-
+<script type="text/javascript">
+  $(document).ready(function()
+    {
+     
+        $("#myTable").tablesorter();
+    }
+);
+</script>
   <h1>Listing decorations</h1>
   <%= paginate @decorations %> 
-<table>
-  <tr>
+<table id="myTable" class="tablesorter"> 
+<thead> 
+<tr>
     <th>Name</th>
     <th>Year</th>
     <th>Expense</th>
@@ -14,10 +22,10 @@
       <th></th>
        <th></th>
   </tr>
-
+</thead> <tbody>
 <% @decorations.each do |decoration| %>
 <% @zone=Zone.find(decoration.zone_id) %>
-
+ 
   <tr>
     <td><%= decoration.name %></td>
     <td><%= decoration.year %></td>
@@ -36,6 +44,7 @@ No file uploaded for expense
     <td><%= link_to 'Destroy', decoration, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
