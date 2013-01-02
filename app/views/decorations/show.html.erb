@@ -1,3 +1,4 @@
+
 <br/><br/><p id="notice"><%= notice %></p>
 
 <p>
@@ -24,7 +25,7 @@ No file uploaded for expense
 <% end %>
 </p>
 
-
+<%= link_to 'Back', decorations_path %>
   <%= paginate @tasks %> 
 <table>
   <tr>
@@ -47,6 +48,7 @@ No file uploaded for expense
 <% end %>
   </tr>
 </table>
+
  <br/>
  <h3>Add tasks and users</h3>
 
