@@ -56,7 +56,7 @@ No file uploaded for expense
     <%= f.text_field :name %>
   </div>
 Select Users:
-  <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true}) %>
+  <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>5}) %>
   <div class="actions">
     <%= f.submit %>
   </div>
