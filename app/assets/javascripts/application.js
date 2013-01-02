@@ -13,6 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+  
+ $(document).ready(function()
+    {
+     
+        $("#myTable").tablesorter();
+    }
+);
+
+
+ 
 function showDecoration(str)
 {
 data = "year=" + str;

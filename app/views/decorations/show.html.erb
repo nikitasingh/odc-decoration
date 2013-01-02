@@ -26,7 +26,8 @@ No file uploaded for expense
 
 <%= link_to 'Back', decorations_path %>
   <%= paginate @tasks %> 
-<table>
+<table id="myTable" class="tablesorter"> 
+<thead> 
   <tr>
     <th>Task Name</th>
     <th>Assigned to users</th>
@@ -34,18 +35,21 @@ No file uploaded for expense
     <th></th>
     <th></th>
   </tr>
+</thead>
+<tbody>
 
 <% @tasks.each do |t| %>
 
   <tr>
     <td>   <%= t.name %></td>
-    <td>   <% t.users.each do |user| %> <%=user.username%> <% end %></td>
+    <td>   <% t.users.each do |user| %> '<%=user.username%>' &nbsp; <% end %></td>
      <td><%= link_to 'Edit', edit_task_path(t) %></td>
     <td><%= link_to 'Destroy', t, confirm: 'Are you sure?', method: :delete %></td>
      
 
 <% end %>
   </tr>
+</tbody>
 </table>
 
  <h3>Add tasks and users</h3>
@@ -55,8 +59,8 @@ No file uploaded for expense
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-Select Users:
-  <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>5}) %>
+&nbsp;&nbsp;&nbsp;Select Users:
+  <br/>&nbsp;&nbsp;&nbsp;<%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>5}) %>
   <div class="actions">
     <%= f.submit %>
   </div>

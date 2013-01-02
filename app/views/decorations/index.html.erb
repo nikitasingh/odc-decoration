@@ -1,12 +1,7 @@
 <br/><br/><center>
 
 <script type="text/javascript">
-  $(document).ready(function()
-    {
-     
-        $("#myTable").tablesorter();
-    }
-);
+
 </script>
   <h1>Listing decorations</h1>
   <%= paginate @decorations %> 
@@ -29,14 +24,13 @@
   <tr>
     <td><%= decoration.name %></td>
     <td><%= decoration.year %></td>
-    <td><p>
-  <b></b>
-<% if decoration.expense.exists? %>
- <%=  link_to "Download", decoration.expense.url(:original, false) %>
-<% else %>
-No file uploaded for expense
-<% end %>
-</p></td>
+    <td>
+      <% if decoration.expense.exists? %>
+       <%=  link_to "Download", decoration.expense.url(:original, false) %>
+      <% else %>No file uploaded for expense
+       <% end %>
+    
+    </td>
     <td><%= @zone.name %></td>
     <td><%= link_to 'Assign tasks', decoration %></td>
     <td><%= link_to 'Show', decoration %></td>

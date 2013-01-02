@@ -2,7 +2,8 @@
 <center>
 <h1>Listing users</h1></center>
 <%= paginate @users %>
-<table>
+<table id="myTable" class="tablesorter"> 
+<thead>
   <tr>
     <th>Email</th>
     <th>Username</th>
@@ -11,6 +12,8 @@
     <th></th>
      <th></th>
   </tr>
+</thead>
+<tbody>
 
   <% @users.each do |user| %>
     <tr>
@@ -27,6 +30,7 @@
     <td<% if can? :delete, @user %>   <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
 <br />
