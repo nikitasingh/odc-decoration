@@ -59,7 +59,6 @@ No file uploaded for expense
   <br />
 Select Users:
   <br/><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true}) %>
-  <br/><br/>
   <div class="actions">
     <%= f.submit %>
   </div>
