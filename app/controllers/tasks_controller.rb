@@ -47,34 +47,25 @@ class TasksController < ApplicationController
  
  respond_to do |format|
       if (params[:user_ids]!=nil) && (params[:task][:name]!="")
- #       p '!!!!!!!!!!!!!!!!! user id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-  #      p params[:name]
          @task = @decoration.tasks.create(params[:task])
          @task.users = User.find(params[:user_ids])
-  @task.save
-        format.html { redirect_to @decoration, notice: 'Task created and assigned.' }
- format.json { render json: @task, status: :created, location: @task }
+         @task.save
+         format.html { redirect_to @decoration, notice: 'Task created and assigned.' }
+         format.json { render json: @task, status: :created, location: @task }
       else
-   #         p '!!!!!!!!!!!!!!!!!!!!!!no id !!!!!!!!!!!!!!!!!!!!!!!!!!'
-   format.html { redirect_to @decoration, notice: 'Add task name and assign it to a user' }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+
+          format.html { redirect_to @decoration, notice: 'Add task name and assign it to a user' }
+          format.json { render json: @task.errors, status: :unprocessable_entity }
       
       end
     end
- 
-  
-
-
-
-
-  
   end
 
   # PUT /tasks/1
   # PUT /tasks/1.json
   def update
-  @task = Task.find(params[:id])
-@decoration=Decoration.find(@task.decoration_id)
+     @task = Task.find(params[:id])
+     @decoration=Decoration.find(@task.decoration_id)
      @task.users = User.find(params[:user_ids])
 
     respond_to do |format|
@@ -93,8 +84,8 @@ class TasksController < ApplicationController
   def destroy
  
     @task = Task.find(params[:id])
-@decoration=Decoration.find(@task.decoration_id)
-p @decoration
+    @decoration=Decoration.find(@task.decoration_id)
+    p @decoration
     @task.destroy
 
     respond_to do |format|

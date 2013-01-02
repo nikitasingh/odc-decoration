@@ -2,22 +2,19 @@ Odcdecoration::Application.routes.draw do
   resources :roles
   resources :tasks 
   resources :taskusers
-
-devise_for :users
-resources :users
+  devise_for :users
+  resources :users
   resources :zones
-
+  resources :tasks_users 
+  resources :taskusers 
   
-   
-    resources :tasks_users 
-     resources :taskusers 
   resources :decorations do
     collection do
       get :home
       get 'fetch_data'
     end
     resources :tasks 
-end
+   end
 
 
 
