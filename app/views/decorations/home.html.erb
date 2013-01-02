@@ -5,7 +5,7 @@
 <center>
 <h1>Listing decorations</h1>
 
- <div class="year"> Select year:<%= select_tag("years", options_for_select(Decoration.select("DISTINCT(YEAR)").collect{|u|[u.year]}),:prompt => "All",:onchange=>"showDecoration(this.value);") %>
+ <div class="year"> Select year:<%= select_tag("years", options_for_select(Decoration.select("DISTINCT(YEAR)").order("year ASC").collect{|u|[u.year]}),:prompt => "All",:onchange=>"showDecoration(this.value);") %>
 
 
  </div>
