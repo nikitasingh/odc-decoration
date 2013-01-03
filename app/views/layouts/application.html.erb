@@ -8,15 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <div class="header">
+<div align="right"><h4><% if user_signed_in? %><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><% end %></h4></div>
   <h2>
-
-   <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> ODC Decoration Management
+     <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> ODC Decoration Management
   </h2>
-  <div class="signout" align="right" style="color:#ffffff">
+
+ <div class="signout" align="right" style="color:#ffffff">
     <% if user_signed_in? %>
-   <h6> Signed in as    <% current_user.roles.each do |role| %> <%=role.name%>  <% end %> (<%= current_user.email %>.)
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  </h6>
+   <h4> Signed in as <% current_user.roles.each do |role| %> <%=role.name%>  <% end %> (<%= current_user.email %>.)
+    
+  </h4>
   <br/>
    &nbsp;<% else %>
     

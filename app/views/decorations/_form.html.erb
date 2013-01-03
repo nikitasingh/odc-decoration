@@ -31,8 +31,10 @@
   <b>Expense:</b>
 <% if @decoration.expense.exists? %>
  <%=  link_to "Download", @decoration.expense.url(:original, false) %>
+<% elsif @decoration.name == nil %>
+
 <% else %>
-No file uploaded for expense
+<font color="Red"> No file uploaded for expense</font>
 <% end %>
 </p>
 

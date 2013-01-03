@@ -27,7 +27,8 @@
     <td>
       <% if decoration.expense.exists? %>
        <%=  link_to "Download", decoration.expense.url(:original, false) %>
-      <% else %>No file uploaded for expense
+      <% else %>
+      <font color="red"> No file uploaded for expense </font>
        <% end %>
     
     </td>
