@@ -14,7 +14,7 @@
   </h2>
   <div class="signout" align="right" style="color:#ffffff">
     <% if user_signed_in? %>
-   <h6> Signed in as <%= current_user.email %>.
+   <h6> Signed in as    <% current_user.roles.each do |role| %> <%=role.name%>  <% end %> (<%= current_user.email %>.)
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   </h6>
   <br/>

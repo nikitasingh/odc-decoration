@@ -18,11 +18,11 @@
   <div class="field">
     <%= f.label :year %><br />
 
-<%= f.select :year, [ '2007','2008','2009','2010','2011','2012','2013' ] %>
+<%= f.select :year, [ '2007','2008','2009','2010','2011','2012','2013' ], :prompt=> 'Select Year' %>
   </div>
   <div class="field">
 
-    <% @zone=Zone.all %>
+    <% @zone=Zone.order('name ASC') %>
     <%= f.label :zone_id %><br />
     <%= f.collection_select :zone_id ,@zone,:id,:name %>
   </div>
