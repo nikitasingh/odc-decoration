@@ -101,7 +101,7 @@ nav ul li a {
 }
 nav ul li a:hover {
   font-size: 18px;
-background: #7DC24B;
+  background: #7DC24B;
 }
 nav li:hover ul {
   font-size: 18px;

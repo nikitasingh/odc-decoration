@@ -6,30 +6,25 @@ class DecorationsController < ApplicationController
 
 
     def home
-if params[:year]
-
-  @decorations=Decoration.where(:year=> params[:year])
-
-else
-  @decorations= Decoration.all
-end
-   respond_to do |format|
-    format.html 
-     format.js { render :layout=>false }
-   end
-end  
+      if params[:year]
+        @decorations = Decoration.where(:year=> params[:year])
+      else
+        @decorations = Decoration.all
+      end
+    respond_to do |format|
+      format.html 
+      format.js { render :layout=>false }
+      end
+    end  
  
   def fetch_data
-     
-if (params[:year]=="")
- 
-      @decorations=Decoration.all
-     render :layout => false
-   else
-
-@decorations=Decoration.where(:year=> params[:year])
-     render :layout => false
-   end
+     if (params[:year]=="")
+       @decorations=Decoration.all
+       render :layout => false
+     else
+       @decorations=Decoration.where(:year=> params[:year])
+       render :layout => false
+     end
   end  
 
   def index
@@ -46,7 +41,7 @@ if (params[:year]=="")
   # GET /decorations/1.json
   def show
     @decoration = Decoration.find(params[:id])
- @tasks=@decoration.tasks.page(params[:page]).per(3)
+    @tasks = @decoration.tasks.page(params[:page]).per(3)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @decoration }

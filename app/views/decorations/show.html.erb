@@ -1,5 +1,4 @@
 
-<%= link_to 'Back', decorations_path %><br/>
 <font color="red"><%= notice %></font>
 <p>
   <b>Theme:</b>
@@ -50,7 +49,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-&nbsp;&nbsp;&nbsp;Select Users:
+&nbsp;&nbsp;&nbsp;<font color="#006699"><b>Select Users:</b></font>
   <br/>&nbsp;&nbsp;&nbsp;<%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>3}) %>
   <div class="actions">
     <%= f.submit %>

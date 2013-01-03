@@ -25,8 +25,9 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = Task.new
-@tasks_user=Tasks_user.new
+     @task = Task.new
+     @tasks_user = Tasks_user.new
+     
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @task }
@@ -65,7 +66,7 @@ class TasksController < ApplicationController
   # PUT /tasks/1.json
   def update
      @task = Task.find(params[:id])
-     @decoration=Decoration.find(@task.decoration_id)
+     @decoration = Decoration.find(@task.decoration_id)
      @task.users = User.find(params[:user_ids])
 
     respond_to do |format|
@@ -84,7 +85,7 @@ class TasksController < ApplicationController
   def destroy
  
     @task = Task.find(params[:id])
-    @decoration=Decoration.find(@task.decoration_id)
+    @decoration = Decoration.find(@task.decoration_id)
     p @decoration
     @task.destroy
 
