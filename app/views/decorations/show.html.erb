@@ -23,16 +23,13 @@
 <font color="red">No file uploaded for expense </font>
 <% end %>
 </p>
-
-
   <%= paginate @tasks %> 
 <table id="myTable" class="tablesorter"> 
 <thead> 
   <tr>
     <th>Task Name</th>
     <th>Assigned to users</th>
- 
-    <th></th>
+  <th></th>
     <th></th>
   </tr>
 </thead>
@@ -54,7 +51,7 @@
     <%= f.text_field :name %>
   </div>
 &nbsp;&nbsp;&nbsp;Select Users:
-  <br/>&nbsp;&nbsp;&nbsp;<%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>5}) %>
+  <br/>&nbsp;&nbsp;&nbsp;<%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>3}) %>
   <div class="actions">
     <%= f.submit %>
 </div>
