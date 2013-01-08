@@ -2,7 +2,7 @@
 <center>
 <h1>Listing users</h1></center>
 <%= paginate @users %>
-<table id="myTable" class="tablesorter"> 
+<table id="table_id"> 
 <thead>
   <tr>
     <th>Email</th>
@@ -27,7 +27,7 @@
       <td><% if can? :update, @user %>
 <%= link_to 'Edit', edit_user_path(user) %>
 <% end %></td>
-    <td<% if can? :delete, @user %>   <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
+    <td><% if can? :delete, @user %>   <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
     </tr>
   <% end %>
 </tbody>

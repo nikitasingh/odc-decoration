@@ -6,18 +6,23 @@
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
+<br />
+  <div><%= f.label :username %><br />
+  <%= f.text_field :username %>
+</div><br />
+  <div>
 
-  <p><%= f.label :username %><br />
-  <%= f.text_field :username %></p>
-
-
-
+ <% @zone=Zone.order('name ASC') %>
+    <%= f.label :zone_id %><br />
+    <%= f.collection_select :zone_id ,@zone,:id,:name %>
+  </div>
+<br />
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
-
+<br />
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
-
+<br />
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

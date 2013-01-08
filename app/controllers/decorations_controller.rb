@@ -41,7 +41,7 @@ class DecorationsController < ApplicationController
   # GET /decorations/1.json
   def show
     @decoration = Decoration.find(params[:id])
-    @tasks = @decoration.tasks.page(params[:page]).per(3)
+    @tasks = @decoration.tasks.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @decoration }

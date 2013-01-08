@@ -38,5 +38,11 @@ data = "year=" + str;
 
      });
 }
+$(document).ready(function(){
 
+    $("#users").multiselect();
+});
 
+$(document).ready( function () {
+    $('#table_id').dataTable();
+} );

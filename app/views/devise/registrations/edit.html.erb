@@ -12,6 +12,11 @@
 
 
 
+    <% @zone=Zone.order('name ASC') %>
+    <%= f.label :zone_id %><br />
+    <%= f.collection_select :zone_id ,@zone,:id,:name %>
+
+
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 

@@ -2,35 +2,39 @@
 <br/>
 <br/>
 
-<center>
-<h1>Listing decorations</h1>
-
- <div class="year">  Select year:<%= select_tag("years", options_for_select(["2007", "2008", "2009", "2010", "2011", "2012", "2013"]),:prompt => "All",:onchange=>"showDecoration(this.value);") %>
- </div>
-
- <br/>
-<div id="year_list"  style="width : 100%; height : 500px; overflow : auto; ">
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year</th>
+<center><h1>Your Task List</h1></center>
+<table id="table_id">
+<thead> 
+   <tr>
+    <th>Task Name</th>
+    <th>Theme Name</th>
     <th>Zone</th>
+    <th>Year</th>
+    <th>Assigned Users</th>
+    
    
   </tr>
+</thead>
+<tbody>
+  <% @tasks=Tasks_user.where(:user_id=>current_user.id) %>
 
-<% @decorations.each do |dec| %>
-<% @zone=Zone.find(dec.zone_id) %>
+<% @tasks.each do |t| %>
+  <% @task=Task.find(t.task_id) %>
 
-  <tr>
-    <td><%= dec.name %></td>
-    <td><%= dec.year %></td>
+   <% @user=User.find(t.user_id) %>
+     <% @decoration=Decoration.find(@task.decoration_id) %>
+<% @zone=Zone.find(@decoration.zone_id) %>
+ <tr>
+    <td><%= @task.name %></td>
+    <td><%= @decoration.name %></td>
     <td><%= @zone.name %></td>
+    <td><%= @decoration.year %></td>
+    <td><% @task.users.each do |user| %> '<%=user.username%>' &nbsp;<%end %></td>
+
     
   </tr>
-<% end %>
+<%end %>
+</tbody>
 </table>
 
-<br />
 
-
-</div>

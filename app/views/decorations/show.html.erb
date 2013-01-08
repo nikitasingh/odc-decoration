@@ -1,29 +1,34 @@
 
 <font color="red"><%= notice %></font>
-<p>
-  <b>Theme:</b>
-  <%= @decoration.name %>
-</p>
+<h3><font color="#006699"> Add tasks and users</h3></font>
+<table>
+  <tr>
+  <td>Theme name:</td>
+  <td><%= @decoration.name %></td>
+</tr>
+<tr>
+  <td>Year:</td>
+  <td><%= @decoration.year %></td>
+</tr>
 
-<p>
-  <b>Year:</b>
-  <%= @decoration.year %>
-</p>
-<% @zone=Zone.find(@decoration.zone_id) %>
-<p>
-  <b>Zone:</b>
-  <%= @zone.name %>
-</p>
-<p>
-  <b>Expense:</b>
-<% if @decoration.expense.exists? %>
- <%=  link_to "Download", @decoration.expense.url(:original, false) %>
-<% else %>
-<font color="red">No file uploaded for expense </font>
+<%= form_for([@decoration, @decoration.tasks.build]) do |f| %>
+
+  <tr>
+    <td><%= f.label "Task " %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+<tr>
+
+<td>Select Users:</td>
+<td><%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>3, :id => "users"}) %>
+</td>
+</tr>
+  <tr>
+   <td colspan="2"><center> <%= f.submit %></center></tr>
+  </table>
 <% end %>
-</p>
-  <%= paginate @tasks %> 
-<table id="myTable" class="tablesorter"> 
+
+<table id="table_id"> 
 <thead> 
   <tr>
     <th>Task Name</th>
@@ -42,16 +47,5 @@
      <% end %>
   </tr>
 </tbody>
-</table>
-<h3> Add tasks and users</h3>
-<%= form_for([@decoration, @decoration.tasks.build]) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-&nbsp;&nbsp;&nbsp;<font color="#006699"><b>Select Users:</b></font>
-  <br/>&nbsp;&nbsp;&nbsp;<%= select_tag("user_ids", options_for_select(User.all.collect{|u|[u.username,u.id]}),{:multiple=> true,:size =>3}) %>
-  <div class="actions">
-    <%= f.submit %>
-</div>
-<% end %>
+</table><br />
+
