@@ -20,13 +20,14 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-gem "paperclip", "~> 3.0"
-gem 'jquery-rails'
+
+  gem "paperclip", "~> 3.0"
+  gem 'jquery-rails'
 
 #gem 'will_paginate'
-gem 'kaminari'
-gem 'cancan'
-gem "rails_best_practices"
+  gem 'kaminari'
+  gem 'cancan'
+  gem "rails_best_practices"
 
 group :production do
 
