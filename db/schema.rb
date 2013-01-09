@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107142106) do
+ActiveRecord::Schema.define(:version => 20130108112317) do
 
   create_table "decorations", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20130107142106) do
     t.string   "expense_content_type"
     t.integer  "expense_file_size"
     t.datetime "expense_updated_at"
+    t.string   "expense_name"
+    t.integer  "amount"
   end
 
   create_table "roles", :force => true do |t|

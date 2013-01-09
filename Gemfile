@@ -26,7 +26,7 @@ gem 'jquery-rails'
 #gem 'will_paginate'
 gem 'kaminari'
 gem 'cancan'
-
+gem "rails_best_practices"
 group :production do
 
 	gem "pg", "~> 0.14.1"
