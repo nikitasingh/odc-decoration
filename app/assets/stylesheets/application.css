@@ -165,7 +165,43 @@ font-size: 18px;
 
 
 
-
+table.tablesorter {
+border-collapse:collapse;
+padding: 10px;
+width: 100%
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  background-color: #e6EEEE;
+  border: 1px solid #FFF;
+  font-size: 15px;
+  padding: 4px;
+  height: 30px;
+}
+table.tablesorter thead tr .header {
+  background-image: url(bg.gif);
+ color: #ffffff;
+  font-size: 15px;
+  background-color: #006699;
+  cursor: pointer;
+}
+table.tablesorter tbody td {
+  color: #3D3D3D;
+  padding:15px;
+  background-color: #FFF;
+  vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+  background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+  background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+  background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
 
 /*current menu css */
 
