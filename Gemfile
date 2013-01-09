@@ -27,7 +27,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'cancan'
 gem "rails_best_practices"
-gem 'jquery-datatables-rails'
+
 group :production do
 
 	gem "pg", "~> 0.14.1"
