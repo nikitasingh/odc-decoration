@@ -16,7 +16,10 @@
   <h4><% if user_signed_in? %><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><% end %></h4>
 </div>
   <h2>
-     <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> ODC Decoration Management
+     <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> 
+ <%= link_to image_tag("button-left.png", :size => "60x60",:alt => "odc decoration"), root_url %>
+
+     ODC Decoration Management
   </h2>
 
  <div class="signout" align="right" style="color:#ffffff">
