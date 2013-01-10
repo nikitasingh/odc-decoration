@@ -3,81 +3,73 @@
 <html>
 <head>
   <title> Odcdecoration</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="wrapper">
 <div class="header">
-<div align="right">
-  <h4><% if user_signed_in? %><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><% end %></h4>
-</div>
+<div align="right"><h4><% if user_signed_in? %><%= link_to "Sign out", destroy_user_session_path, :method => :delete %><% end %></h4></div>
   <h2>
-     <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> 
-
-
-     ODC Decoration Management
+     <%= link_to image_tag("flower.png", :size => "60x60",:alt => "odc decoration"), root_url %> ODC Decoration Management
   </h2>
 
  <div class="signout" align="right" style="color:#ffffff">
     <% if user_signed_in? %>
-   <h4> Signed in as <% current_user.roles.each do |role| %> <%=role.name%>  <% end %> (<%= current_user.email %>)
+   <h4> Signed in as <% current_user.roles.each do |role| %> <%=role.name%> <% end %> (<%= current_user.email %>)
     
   </h4>
   <br/>
    &nbsp;<% else %>
     
-  <% end %></div>
-</div>
+  <% end %></div></div>
 <% if user_signed_in? %>
-<div id='cssmenu'>
-<ul>
-   <li class='active '><%= link_to 'Home', root_url %></li>
-   <li class='has-sub '><a href="#">Manage Decoration</a>
-      <ul>
-      <li><%= link_to 'New decoration', new_decoration_path %></li>
+
+<nav>
+  <ul id="menu">
+
+    <li style="width:25%;"><new><%= link_to 'Home', root_url %></new></li>
+    <li style="width:25%;"><new><a href="#">Manage Decoration</a></new>
+        <ul>
+            <li><%= link_to 'New decoration', new_decoration_path %></li>
             <li><%= link_to 'View decorations', decorations_path %></li>
             <li><%= link_to 'Assign tasks', decorations_path %></li>
             <li><%= link_to 'Delete or Edit decorations', decorations_path %></li>
-      </ul>
-   </li>
-   <li class='has-sub '><a href="#">Manage Zones</a>
+        </ul>
+    </li>
+
+    <li style="width:25%;"><new><a href="#">Manage Zones</a></new>
         <ul>
             <li><%= link_to 'Add new zone', new_zone_path %></li>
             <li><%= link_to 'View zones', zones_path %></li>
             <li><%= link_to 'Delete or Edit zones', zones_path %></li>
-        </ul></li>
-  <li class='has-sub '><a href="#">Manage Users</a></a>
-       <ul>
+        </ul>
+    </li>
+    <li style="width:25%;"><new><a href="#">Manage Users</a></new>
+        <ul>
             <li><% if can? :update, @user %><%= link_to 'New user', new_user_path %><% end %></li>
             <li><%= link_to 'View users', users_path %></li>
             <li><% if can? :update, @user %><%= link_to 'Delete or Edit users', users_path %><% end %></li>
             <li><% if can? :update, @user %><%= link_to 'New roles', new_role_path %><% end %></li>
             <li><%= link_to 'View roles', roles_path %></li>
             <li><% if can? :update, @user %><%= link_to 'Delete or Edit roles', roles_path %><% end %></li>
-        </ul></li>
-</ul>
-</div>
+        </ul>
+    </li>
 
-
-
-
+  </ul>
+</nav>
+<br/>
 
   <% else %>
   <% end %>
+<body>
 
+<%= yield %>
 
-<div class="content">
-  <%= yield %>
-</div>
-<div class="footer"> 
-  <center>  © 2012-2013 Tata Consultancy Services Limited. All Rights Reserved</center>
-</div>
-</div>
 </body>
 
+
+<div class="footer">
+    © 2012-2013 Tata Consultancy Services Limited. All Rights Reserved
+</div>
 
 </html>
