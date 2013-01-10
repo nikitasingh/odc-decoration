@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.multiselect.min.js
 //= require_tree .
   
  $(document).ready(function()
