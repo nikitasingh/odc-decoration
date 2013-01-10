@@ -2,7 +2,7 @@
 /*
  * Table
  */
-table {
+table.dataTable {
 	margin: 0 auto;
 	clear: both;
 	width: 100%;
