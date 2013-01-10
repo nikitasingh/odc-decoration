@@ -29,7 +29,7 @@
     <td><%= @decoration.name %></td>
     <td><%= @zone.name %></td>
     <td><%= @decoration.year %></td>
-    <td><% @task.users.each do |user| %> '<%=user.username%>' &nbsp;<%end %></td>
+    <td><%= @task.users.map(&:username).join(', ')%></td>
 
     
   </tr>
