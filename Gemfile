@@ -19,9 +19,10 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
-
-gem "paperclip", "~> 3.0"
 gem 'jquery-rails'
+end
+gem "paperclip", "~> 3.0"
+
 
 #gem 'will_paginate'
 gem 'kaminari'
