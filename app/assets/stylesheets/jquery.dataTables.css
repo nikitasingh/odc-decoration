@@ -3,8 +3,8 @@
  * Table
  */
 
-table {
-	margin: auto;
+table.dataTable {
+	margin: 0 auto;
 	clear: both;
 	width: 100%;
 	padding: 10px;
