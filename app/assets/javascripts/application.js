@@ -42,3 +42,6 @@ data = "year=" + str;
 $(document).ready( function () {
     $('#table_id').dataTable();
 } );
+
+
+
