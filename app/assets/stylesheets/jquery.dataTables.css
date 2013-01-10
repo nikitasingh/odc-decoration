@@ -157,7 +157,7 @@ color: #006699;
 	line-height: 22px;
 }
 .paging_full_numbers a:active {
-	outline: none
+	outline: none;
 }
 .paging_full_numbers a:hover {
 	text-decoration: none;
