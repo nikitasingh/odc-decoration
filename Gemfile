@@ -23,7 +23,7 @@ group :assets do
 
 end
 gem "paperclip", "~> 3.0"
-gem 'jquery-datatables-rails'
+gem 'jquery-datatables-rails', git: 'https://github.com/rweng/jquery-datatables-rails.git'
 gem 'jquery-rails'
 #gem 'will_paginate'
 gem 'kaminari'
