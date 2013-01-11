@@ -14,12 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
   
- $(document).ready(function()
-    {
-     
-        $("#myTable").tablesorter();
-    }
-);
+
 
 
  
@@ -39,9 +34,6 @@ data = "year=" + str;
      });
 }
 
-$(document).ready( function () {
-    $('#table_id').dataTable();
-} );
 
 
 
