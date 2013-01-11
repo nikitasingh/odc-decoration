@@ -6,6 +6,7 @@ table.dataTable {
 	margin: 0 auto;
 	clear: both;
 	width: 100%;
+
 }
 
 table.dataTable thead th {
@@ -49,7 +50,9 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 .dataTables_wrapper {
 	position: relative;
 	clear: both;
+	
 	*zoom: 1;
+
 }
 
 
@@ -58,6 +61,9 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  */
 .dataTables_length {
 	float: left;
+	font-weight: bold;
+		padding: 10px;
+
 }
 
 
@@ -67,6 +73,8 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 .dataTables_filter {
 	float: right;
 	text-align: right;
+		padding: 10px;
+
 }
 
 
@@ -76,6 +84,9 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 .dataTables_info {
 	clear: both;
 	float: left;
+	font-weight: bold;
+		padding: 10px;
+
 }
 
 
@@ -85,6 +96,8 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 .dataTables_paginate {
 	float: right;
 	text-align: right;
+	font-weight: bold;
+		padding: 10px;
 }
 
 /* Two button pagination - previous / next */
@@ -125,13 +138,13 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 	margin-left: 10px;
 }
 
-.paginate_enabled_previous { background: url('../images/back_enabled.png') no-repeat top left; }
-.paginate_enabled_previous:hover { background: url('../images/back_enabled_hover.png') no-repeat top left; }
-.paginate_disabled_previous { background: url('../images/back_disabled.png') no-repeat top left; }
+.paginate_enabled_previous { background: url('back_enabled.png') no-repeat top left; }
+.paginate_enabled_previous:hover { background: url('back_enabled_hover.png') no-repeat top left; }
+.paginate_disabled_previous { background: url('back_disabled.png') no-repeat top left; }
 
-.paginate_enabled_next { background: url('../images/forward_enabled.png') no-repeat top right; }
-.paginate_enabled_next:hover { background: url('../images/forward_enabled_hover.png') no-repeat top right; }
-.paginate_disabled_next { background: url('../images/forward_disabled.png') no-repeat top right; }
+.paginate_enabled_next { background: url('forward_enabled.png') no-repeat top right; }
+.paginate_enabled_next:hover { background: url('forward_enabled_hover.png') no-repeat top right; }
+.paginate_disabled_next { background: url('forward_disabled.png') no-repeat top right; }
 
 /* Full number pagination */
 .paging_full_numbers {
