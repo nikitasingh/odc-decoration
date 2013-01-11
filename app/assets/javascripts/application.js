@@ -45,3 +45,6 @@ $(document).ready( function () {
 
 
 
+$(document).ready(function(){
+   $("#users").multiselect();
+});
