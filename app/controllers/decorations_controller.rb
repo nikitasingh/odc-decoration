@@ -6,26 +6,22 @@ class DecorationsController < ApplicationController
 
 
     def home
-      if params[:year]
-        @decorations = Decoration.where(:year=> params[:year])
-      else
+    @tasks=Tasks_user.where(:user_id=>current_user.id) 
         @decorations = Decoration.all
-      end
-    respond_to do |format|
-      format.html 
-      format.js { render :layout=>false }
+        respond_to do |format|
+       format.html 
+       format.js { render :layout=>false }
+       
       end
     end  
  
-  def fetch_data
-     if (params[:year]=="")
-       @decorations=Decoration.all
-       render :layout => false
-     else
-       @decorations=Decoration.where(:year=> params[:year])
-       render :layout => false
-     end
-  end  
+ # def fetch_data
+  #   if (params[:year]=="")
+   #else
+    #   @decorations=Decoration.where(:year=> params[:year])
+      # render :layout => false
+     #end
+  #end  
 
   def index
    
@@ -106,9 +102,5 @@ class DecorationsController < ApplicationController
       format.html { redirect_to decorations_url }
       format.json { head :no_content }
     end
-  end
-
-  def search
-    @decoration = Decoration.find(params[:decoration][:year])
   end
 end

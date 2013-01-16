@@ -41,7 +41,10 @@
 <% end %>
 
 
-    <%= f.file_field :expense %></td>
+    <%= f.file_field :expense %> or   <%= link_to 'Add expense now',
+         new_expensesheet_path, 
+        :onclick=>"window.open(this.href,'create_expensesheet', 'height=600, width=600');return false;" 
+%></td>
   </tr>
   <tr>
   <td colspan="2" align="center">

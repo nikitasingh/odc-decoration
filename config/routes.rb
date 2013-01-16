@@ -1,4 +1,6 @@
 Odcdecoration::Application.routes.draw do
+  resources :expensesheets
+
   resources :roles
   resources :tasks 
   devise_for :users

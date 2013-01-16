@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @expensesheet.name %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @expensesheet.amount %>
+</p>
+
+<p>
+  <b>Decoration:</b>
+  <%= @expensesheet.decoration_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_expensesheet_path(@expensesheet) %> |
+<%= link_to 'Back', expensesheets_path %>

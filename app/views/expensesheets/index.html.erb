@@ -1,0 +1,27 @@
+<h1>Listing expensesheets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Decoration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expensesheets.each do |expensesheet| %>
+  <tr>
+    <td><%= expensesheet.name %></td>
+    <td><%= expensesheet.amount %></td>
+    <td><%= expensesheet.decoration_id %></td>
+    <td><%= link_to 'Show', expensesheet %></td>
+    <td><%= link_to 'Edit', edit_expensesheet_path(expensesheet) %></td>
+    <td><%= link_to 'Destroy', expensesheet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expensesheet', new_expensesheet_path %>

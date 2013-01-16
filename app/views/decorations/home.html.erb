@@ -16,13 +16,12 @@
   </tr>
 </thead>
 <tbody>
-  <% @tasks=Tasks_user.where(:user_id=>current_user.id) %>
+
 
 <% @tasks.each do |t| %>
-  <% @task=Task.find(t.task_id) %>
-
-   <% @user=User.find(t.user_id) %>
-     <% @decoration=Decoration.find(@task.decoration_id) %>
+<% @task=Task.find(t.task_id) %>
+<% @user=User.find(t.user_id) %>
+<% @decoration=Decoration.find(@task.decoration_id) %>
 <% @zone=Zone.find(@decoration.zone_id) %>
  <tr>
     <td><%= @task.name %></td>
