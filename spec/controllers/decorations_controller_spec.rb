@@ -32,7 +32,7 @@ describe "#new" do
     	 get "new"
         @decorations=Decoration.new(:name=>'decoration',:year=>'2012',:zone_id=>'1',:expense=> File.new(Rails.root + 'spec/fixtures/test.xls'))
        @decorations.should be_an_instance_of Decoration
-  
+
     end
 end
 
@@ -45,14 +45,7 @@ describe "#show" do
 
 end
 end
-describe "#new" do
-    it "must take 4 parameter and returns a decoration object" do
-    	 get "new"
-        @decorations=Decoration.new(:name=>'decoration',:year=>'2012',:zone_id=>'1',:expense=> File.new(Rails.root + 'spec/fixtures/test.xls'))
-       @decorations.should be_an_instance_of Decoration
-        assigns(:decorations).should eq([@decorations])
-    end
-end
+
 
 describe "#home" do 
 	it "it takes nothing as input and render users tasks with decoration and zones" do
