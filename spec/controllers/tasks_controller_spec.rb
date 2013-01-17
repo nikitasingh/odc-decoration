@@ -57,11 +57,11 @@ describe "#index" do
 end
 
 describe "#update" do
-  it "must take task id and render show page of task" do 
+  it "must take task id and render edit page of task" do 
 
     @tasks=Task.create!(:name=>'task',:decoration_id => '1')
-		get "update",:id=>@tasks.id
-		response.should render_template(:action => 'edit')
+    get "show",:id=>@tasks.id
+    response.should render_template(:action => 'edit')
 
 end
 end
