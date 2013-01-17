@@ -24,4 +24,17 @@ end
     decoration.valid?
     decoration.errors[:name].should include("can't be blank")
   end
+
+
+
+
+  it "is valid by default" do
+          decoration = mock("Decoration")
+    decoration.should be_valid
+  end
+
+  it "says it is a Decoration" do
+      decoration = mock("Decoration")
+      decoration.should be_a(Decoration)
+    end
 end
