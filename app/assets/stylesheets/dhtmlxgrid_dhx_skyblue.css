@@ -46,8 +46,8 @@ div.gridbox_dhx_skyblue table.obj tr  td{
 }
 * html .gridbox_dhx_skyblue .obj td{
     height:auto;
-    padding-top=3px;
-    padding-bottom=3px;
+    padding-top:3px;
+    padding-bottom:3px;
 }
 div.gridbox_dhx_skyblue table.obj.row20px tr  td{
     padding-top:0px;
