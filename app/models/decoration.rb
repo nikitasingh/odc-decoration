@@ -7,5 +7,6 @@ class Decoration < ActiveRecord::Base
 	attr_accessible :expense
     has_attached_file :expense
     has_many:tasks
+    has_many:decorationexpenses
 
 end

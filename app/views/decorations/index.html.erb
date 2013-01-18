@@ -12,6 +12,7 @@
     <th>Year</th>
     <th>Expense</th>
     <th>Zone</th>
+       <th></th>
     <th></th>
     <th></th>
       <th></th>
@@ -34,6 +35,7 @@
     </td>
     <td><%= @zone.name %></td>
     <td><%= link_to 'Assign tasks', decoration %></td>
+    <td><%= link_to 'Add expense', expense_decorations_path(:decoration => decoration.id) %></td>
     <td><%= link_to 'Show', decoration %></td>
     <td><%= link_to 'Edit', edit_decoration_path(decoration) %></td>
     <td><%= link_to 'Destroy', decoration, confirm: 'Are you sure?', method: :delete %></td>

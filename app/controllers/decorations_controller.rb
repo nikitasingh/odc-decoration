@@ -2,7 +2,54 @@ class DecorationsController < ApplicationController
   # GET /decorations
   # GET /decorations.json
 
-  
+  def expense
+     @decoration =  Decoration.find(params[:decoration])  
+          p'decoration'
+    end
+
+     def data
+    p params[:decoration]
+        @decorationexpenses = Decorationexpense.where(:decoration_id=> params[:decoration])
+
+        p '!!!!!!!!!!!data!!!!!!!!!!!!!!!!!!!!!'
+   
+    end
+
+
+    def dbaction
+        #called for all db actions
+           p params[:decoration]
+        name = params["c0"]
+      amount   = params["c1"]
+        decoration_id            = params["c2"]
+         p '!!!!!!!!!!!!!!dsfsdfdsfsdf!!!!!!!!!!!!!!!!!!'
+        @mode = params["!nativeeditor_status"]
+        
+        @id = params["gr_id"]
+        case @mode
+            when "inserted"
+                decorationexpense = Decorationexpense.new
+                decorationexpense.name = name
+                decorationexpense.amount = amount
+                decorationexpense.decoration_id = params[:decoration]
+                decorationexpense.save!
+                
+                @tid = decorationexpense.id
+            when "deleted"
+                decorationexpense=Decorationexpense.find(@id)
+                decorationexpense.destroy
+                
+                @tid = @id
+            when "updated"
+                decorationexpense=Decorationexpense.find(@id)
+                decorationexpense.name = name
+                decorationexpense.amount = amount
+                decorationexpense.decoration_id = params[:decoration]
+                decorationexpense.save!
+                
+                @tid = @id
+        end 
+    end
 
 
     def home

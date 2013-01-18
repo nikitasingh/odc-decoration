@@ -1,6 +1,9 @@
 Odcdecoration::Application.routes.draw do
-  resources :expensesheets
 
+
+    match "decoration/view" => "decorations#expense", :as => :expense
+        match "decoration/data" => "decorations#data", :as => :data
+                match "decoration/dbaction" => "decorations#dbaction", :as => :dbaction
   resources :roles
   resources :tasks 
   devise_for :users
@@ -10,6 +13,9 @@ Odcdecoration::Application.routes.draw do
     collection do
       get :home
       get :fetch_data
+      get :expense
+      get :data
+      get :dbaction
     end
     resources :tasks 
    end
@@ -58,9 +64,9 @@ Odcdecoration::Application.routes.draw do
   #   end
 
   # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #   namespace :decoration do
+  #     # Directs /decoration/products/* to Admin::ProductsController
+  #     # (app/controllers/decoration/products_controller.rb)
   #     resources :products
   #   end
 

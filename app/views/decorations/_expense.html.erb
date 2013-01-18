@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+   
+    </head>
+    <body>
+        <div id="grid_here" style="width:300px; height:400px;">
+        </div>
+        <script type="text/javascript" charset="utf-8">
+      var deco = getUrlVars()["decoration"];
+
+  
+
+      var grid = new dhtmlXGridObject("grid_here");
+            grid.setImagePath("/javascripts/codebase/imgs/");
+            grid.setHeader("Name, Amount");
+           
+            grid.setColSorting("str,str");
+            grid.setInitWidths("150,150");
+            grid.setSkin("dhx_skyblue");
+            grid.init();
+            grid.load("/decoration/data?decoration="+deco);
+            
+            dp = new dataProcessor("/decoration/dbaction?decoration="+deco);
+            dp.init(grid);
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+        </script>
+        <input type="button" value="Add" onclick="grid.addRow(grid.uid(),'new expense')">
+        <input type="button" value="Delete" onclick="grid.deleteSelectedRows()">
+
+   
+   
+    </body>
+    <%= @decoration.id %>
+</html>
