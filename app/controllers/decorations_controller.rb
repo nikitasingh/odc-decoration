@@ -3,35 +3,33 @@ class DecorationsController < ApplicationController
   # GET /decorations.json
 
 
-def import
-  Decorationexpense.import(params[:file],params[:decoration])
-        p '!!!!!!!!!!!import!!!!!!!!!!!!!!!!!!!!!'
-  
-   redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "expense imported."
-end
+     def import
+      Decorationexpense.import(params[:file],params[:decoration])
+ 
+      redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "expense imported."
+   
+     end
 
 
-  def expense
+    def expense
      @decoration =  Decoration.find(params[:decoration])  
-          p'decoration'
+
     end
 
      def data
-    p params[:decoration]
+
         @decorationexpenses = Decorationexpense.where(:decoration_id=> params[:decoration])
 
-        p '!!!!!!!!!!!data!!!!!!!!!!!!!!!!!!!!!'
    
     end
 
 
     def dbaction
         #called for all db actions
-           p params[:decoration]
-        name = params["c0"]
-      amount   = params["c1"]
-        decoration_id            = params["c2"]
-         p '!!!!!!!!!!!!!!dsfsdfdsfsdf!!!!!!!!!!!!!!!!!!'
+           
+          amount   = params["c1"]
+          decoration_id            = params["c2"]
+
         @mode = params["!nativeeditor_status"]
         
         @id = params["gr_id"]
