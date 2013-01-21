@@ -9,6 +9,8 @@ load_and_authorize_resource
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
+       format.csv { send_data User.to_csv }
+      format.xls { send_data User.to_csv(col_sep: "\t") }
     end
   end
 
