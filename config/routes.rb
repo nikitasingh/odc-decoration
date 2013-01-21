@@ -20,7 +20,9 @@ Odcdecoration::Application.routes.draw do
     resources :tasks 
    end
 
-
+resources :decorations do
+    collection { post :import }
+  end
 
 #match 'decorations/home' => 'decorations#home'
   # The priority is based upon order of creation:

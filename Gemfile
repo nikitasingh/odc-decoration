@@ -10,7 +10,7 @@ group :test,:development do
     gem "factory_girl_rails", "~> 4.0"
     gem "mocha", "~> 0.13.1"
 end
-
+gem 'roo'
 gem 'devise'
 # Gems used only for assets and not required
 # in production environments by default.

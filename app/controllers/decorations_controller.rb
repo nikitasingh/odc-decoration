@@ -2,6 +2,15 @@ class DecorationsController < ApplicationController
   # GET /decorations
   # GET /decorations.json
 
+
+def import
+  Decorationexpense.import(params[:file],params[:decoration])
+        p '!!!!!!!!!!!import!!!!!!!!!!!!!!!!!!!!!'
+  
+   redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "expense imported."
+end
+
+
   def expense
      @decoration =  Decoration.find(params[:decoration])  
           p'decoration'
