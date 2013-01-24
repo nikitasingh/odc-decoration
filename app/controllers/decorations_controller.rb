@@ -4,9 +4,19 @@ class DecorationsController < ApplicationController
 
 
      def import
-      Decorationexpense.import(params[:file],params[:decoration])
- 
-      redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "expense imported."
+      
+if params[:file]==nil
+
+  redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "Please select any file."
+   
+else
+    case File.extname(params[:file].original_filename)
+  when '.xls' then Decorationexpense.import(params[:file],params[:decoration])
+     redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "Expense imported."
+
+  else  redirect_to expense_decorations_path(:decoration => params[:decoration]), notice: "Invalid file extension."
+  end
+    end 
    
      end
 

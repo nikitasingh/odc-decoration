@@ -1,9 +1,12 @@
 <center>
 	<h1> Add Expense </h1>
-<font color="red">Note:You can add the expense manually by clicking on the add button in the below table or import an excel sheet.<br/>
+<font><b>Note:</b>You can add the expense manually by clicking on the add button in the below table or import an excel sheet.<br/>
 Make sure the excel file have a heading called 'name' and 'amount and the extension is .xls'</font>
+<br/>
+<br/>
 <%= form_tag import_decorations_path(:decoration =>params[:decoration]), multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
   <% end %>
+ <font color="red"> <%= notice %></font>
 	<%= render 'expense' %></center>
