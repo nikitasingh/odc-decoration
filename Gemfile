@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,7 +30,7 @@ gem 'jquery-rails'
 #gem 'will_paginate'
 gem 'kaminari'
 gem 'cancan'
-
+gem 'newrelic_rpm'
 group :production do
 
 gem "pg", "~> 0.14.1"

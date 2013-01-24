@@ -26,7 +26,7 @@ class DecorationsController < ApplicationController
 
     def dbaction
         #called for all db actions
-           
+                name = params["c0"]
           amount   = params["c1"]
           decoration_id            = params["c2"]
 

@@ -16,7 +16,7 @@ $(document).ready(function(){
   <td>Year:</td>
   <td><%= @decoration.year %></td>
 </tr>
-<%= link_to 'Add expense', expense_decorations_path(:decoration => @decoration.id) %>
+
 
 <%= form_for([@decoration, @decoration.tasks.build]) do |f| %>
 
