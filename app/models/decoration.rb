@@ -6,7 +6,7 @@ class Decoration < ActiveRecord::Base
 	vnd.msexcel']
 	attr_accessible :expense
     has_attached_file :expense
-    has_many:tasks
-    has_many:decorationexpenses
+    has_many:tasks, :dependent => :destroy
+    has_many:decorationexpenses, :dependent => :destroy
 
 end

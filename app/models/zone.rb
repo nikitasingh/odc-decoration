@@ -1,5 +1,5 @@
 class Zone < ActiveRecord::Base
 	attr_accessible :name 
 	validates :name,  :presence => true,:uniqueness => true
-	has_many :decorations
+	has_many :decorations, :dependent => :destroy
 end
