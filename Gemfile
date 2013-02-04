@@ -4,13 +4,18 @@ gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :test,:development do
+group :test do
     gem 'sqlite3'
     gem "rspec-rails", "~> 2.4"
     gem "factory_girl_rails", "~> 4.0"
     gem "mocha", "~> 0.13.1"
 end
-gem 'roo'
+group :development do
+    gem 'sqlite3'
+
+end
+
+
 gem 'devise'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,7 +35,7 @@ gem 'jquery-rails'
 #gem 'will_paginate'
 gem 'kaminari'
 gem 'cancan'
-gem 'newrelic_rpm'
+
 group :production do
 
 gem "pg", "~> 0.14.1"
